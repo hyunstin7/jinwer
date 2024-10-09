@@ -2989,6 +2989,7 @@ header.s5-bg {
         padding-top: 0;
         pointer-events: auto;
         position: relative;
+        height: 100%;
     }
 
     .s6-title-wrap {

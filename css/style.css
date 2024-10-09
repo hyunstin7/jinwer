@@ -3198,6 +3198,42 @@ header.s5-bg {
         }
     }
 
+    @keyframes s9-txt-left {
+        0%{
+            opacity: 0;
+            transform: translateY(-200px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+    
+    @keyframes s9-h2-left {
+        0%{
+            opacity: 0;
+            transform: translate3d(-8px,-200px,0);
+        }
+    
+        30%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 1;
+            transform: translate3d(-8px,0,0);
+        }
+    }
+    
+    @keyframes s9-txt-right {
+        0%{
+            opacity: 0;
+            transform: translateY(200px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
   
 
     .sec9 .txt-wrap {
@@ -3212,10 +3248,12 @@ header.s5-bg {
 
     .sec9 .txt-wrap .txt-inner h2 {
         font-size: 3rem;
+        letter-spacing: -2px;
     }
 
     .sec9 .txt-wrap .txt-inner p:first-child {
         font-size: 1.66rem;
+        letter-spacing: -2px;
     }
 
     .sec9 .txt-wrap .txt-inner > p {
@@ -3226,6 +3264,10 @@ header.s5-bg {
     .sec9 .txt-wrap3 {
         justify-content: center;
         padding-bottom: 20px;
+    }
+
+    .sec9.on .txt-wrap3 {
+        animation: s9-txt-right 1s 2.4s forwards
     }
 
     .sec9 .txt-wrap3 .inner-txt{

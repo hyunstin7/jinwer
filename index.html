@@ -823,6 +823,13 @@
     <script>
 
         window.addEventListener('load', function () {
+
+            window.scrollTo({
+                        top: 0
+                    })
+                    document.querySelector('.sec6').scrollTo({
+                        top: 0
+                    })
             let s6Height = document.querySelector('.s6-sticky-wrap').clientWidth
 
             if (window.innerWidth <= 768) {
@@ -1398,25 +1405,14 @@
 
             window.addEventListener('resize', function () {
                 if (window.innerWidth <= 768) {
-                    sec6AutoPlay = false;
-                    resetSec6AutoPlay()
-                    sec6CurrentSlider = 1
-                    window.scrollTo({
-                        top: 0
-                    })
+                   
+                   
                     console.log(1)
                     document.querySelector('body').style.overflowY = 'visible'
                     document.querySelector('.container').removeEventListener('wheel', wheelEvent)
                 } else {
-                    sec6SlideDelay = true;
-                    clearInterval(sec6AutoPlay)
-                    sec6CurrentSlider = 1
-                    window.scrollTo({
-                        top: 0
-                    })
-                    document.querySelector('.sec6').scrollTo({
-                        top: 0
-                    })
+                    
+                    
                     currentSection = 0
                     vertical = 0;
                     horizontal = 0;

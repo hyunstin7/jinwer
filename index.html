@@ -966,7 +966,7 @@
             let sec6SlideDelay = false;
             let sec6CurrentSlider = 1;
             // sec6 list복제하기 //
-            if (children.length > 0) {
+            if (window.innerWidth <= 768 ) {
 
                 const firstChild = children[0].cloneNode(true);
                 const lastChild = children[children.length - 1].cloneNode(true);
@@ -975,8 +975,9 @@
                 parent.appendChild(firstChild);
 
                 parent.insertBefore(lastChild, parent.firstChild);
-            }
             listWrap.style.transform = `translate3d(calc(-${sec6CurrentSlider} * 100vw),0,0)`
+
+            }
 
             //   sec6 list 위치 값 //
             const sec6Tab = (e) => {
@@ -1055,12 +1056,17 @@
             let sec6EndPos = 0;
 
             listWrap.addEventListener('dragstart',function(e){
+                e.stopPropagation()
+                if(!sec6SlideDelay){
                 sec6PosX1 = e.pageX
                 clearInterval(sec6AutoPlay)
+                }
             })
             listWrap.addEventListener('drag',function(e){
                 e.stopPropagation()
+                if(!sec6SlideDelay){
                 sec6PosX2 = e.pageX
+                }
             })
 
             listWrap.addEventListener('dragover',function(e){
@@ -1356,6 +1362,9 @@
                     observer2.observe(list);
                 });
             } else {
+                sec6SlideDelay = true;
+                    clearInterval(sec6AutoPlay)
+                    sec6CurrentSlider = 1
                 console.log('피시버전임')
                 document.querySelector('.sec6').addEventListener('scroll', sec6ScrollHandler)
                 currentSection = 0
@@ -1389,6 +1398,9 @@
 
             window.addEventListener('resize', function () {
                 if (window.innerWidth <= 768) {
+                    sec6AutoPlay = false;
+                    resetSec6AutoPlay()
+                    sec6CurrentSlider = 1
                     window.scrollTo({
                         top: 0
                     })
@@ -1396,6 +1408,9 @@
                     document.querySelector('body').style.overflowY = 'visible'
                     document.querySelector('.container').removeEventListener('wheel', wheelEvent)
                 } else {
+                    sec6SlideDelay = true;
+                    clearInterval(sec6AutoPlay)
+                    sec6CurrentSlider = 1
                     window.scrollTo({
                         top: 0
                     })

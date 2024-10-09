@@ -3413,6 +3413,22 @@ header.s5-bg {
 
     }
 
+    .s10-inner h2 {
+        font-size: 2rem;
+    }
+
+    .sec11 > h2 {
+        font-size: 2.33rem;
+    }
+
+    .s11-inner p {
+        font-size: 1.33rem;
+    }
+
+    .s11-inner h4 {
+        font-size: 2rem;
+    }
+
 
     .sec11 .img-wrap {
         flex-direction: column;

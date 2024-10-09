@@ -1930,9 +1930,9 @@ header.s5-bg {
     display: none;
     width: 50%;
     height: 2rem;
-    position: fixed;
+    position: absolute;
     left: 50%;
-    bottom: 3rem;
+    bottom: 2rem;
     transform: translateX(-50%);
     z-index: 55;
 }
@@ -2973,7 +2973,7 @@ header.s5-bg {
 
     .sec6 {
         height: auto!important;
-        padding-top: 100px;
+        padding: 100px 0 30px 0;
     }
 
     .s6-sticky-wrap {
